@@ -26,7 +26,8 @@ Informa a mudança de *layout* inesperado, quando algum elemento da tela muda su
 Vale ressaltar que nem todas a mudanças de *layout* são ruim, desde que seja proposital e feita com alguma animação. É importante que a pessoa que utiliza perceba a movimentação e não acabe cometendo algum erro.
 Para isso, propriedades como o *transform* do CSS permite animar elementos sem acionar mudanças de *layout*.
 
-### Referência
+### Material de apoio
+
 [Web Vitals - Essential metrics for a healthy site](https://web.dev/learn-web-vitals/)
 
 [Largest Contentful Paint (LCP)](https://web.dev/lcp/)

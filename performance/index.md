@@ -3,3 +3,4 @@ A performance está diretamente ligada a experiência da pessoa que vai utilizar
 Separei alguns links que abrange esse tópico:
 
  - [Web Vitals](web-vitals.md)
+ - [Otimização no front-end](optimization.md)
