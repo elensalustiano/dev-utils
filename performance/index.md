@@ -4,3 +4,4 @@ Separei alguns links que abrange esse tópico:
 
  - [Web Vitals](web-vitals.md)
  - [Otimização no front-end](optimization.md)
+ - [Navegador](browser.md)

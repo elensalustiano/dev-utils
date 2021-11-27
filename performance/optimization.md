@@ -10,7 +10,7 @@ O tamanho dos arquivos importam, pois o navegador vai ter que baixá-los para m�
 
 ## Compressão do conteúdo
 
-Comprimir arquivos no servidor ajuda na hora de baixar o conteúdo. Para saber o tamanho dos arquivos baixados e se estão zipados, basta olhar na aba network do devTools. Nessa aba temos o tamanho do conteúdo (size content) e o tempo que levou para ser baixado (timeline) e, ao clicar na requisição, podemos ver no header se temos alguma compressão (Content-Encoding).
+Comprimir arquivos no servidor ajuda na hora de baixar o conteúdo. Para saber o tamanho dos arquivos baixados e se estão zipados, basta olhar na aba network do devTools. Nessa aba temos o tamanho do conteúdo (size content) e o tempo que levou para ser baixado (timeline) e, ao clicar na requisição, podemos ver no header se temos alguma compressão (Content-Encoding). Os protocolos atuais já fazem essa compressão, inclusive do hearder da requisição.
 
 Gzip e Brotli são exemplos de ferramentas para compressão de arquivos.
 
@@ -23,19 +23,9 @@ As imagens são uns dos maiores ofensores da performance, devido a falta de otim
 
 Além dessa melhoria, temos a técnica de sprite que consiste em gerar um único arquivo contendo várias imagens, ajudando a diminuir a quantidade de requisições.
 
-## Script baixados
+## Número de requisições
 
-Acredito não ser um problema hoje em dia, pois muitos frameworks geram builds otimizadas. A quantidade de tag script no seu HTML influencia no tempo de carregamento, pois os navegadores paralelizam as requisições, então as próximas precisam esperar. Imagine que você tenha 20 script de CSS para serem baixados, pois você separou em vários arquivos e está importando um por vez, isso geraria 20 requisições para o servidor, o que poderia criar um gargalo. Ao invés disso, todos esses arquivos poderiam estar concatenado em um index.css e ter apenas uma requisição para baixar todo o estilo. Para isso podemos utilizar algumas ferramentas como [gulp-useref](https://github.com/jonkemp/gulp-useref) para concatenar e minificar o CSS. Isso vale também para os arquivos JavaScript.
-
-Uma coisa que precisamos ter em mente ao fazer isso, é que você pode carregar arquivos que não serão utilizados em primeiro momento, para isso uma melhor solução é dividir os arquivos por contexto.
-
-## Recursos inline
-
-Para diminuir número de requisições ou fazer com que um recurso seja executado mais rápido, podemos usar o recurso inline, diretamente no HTML. Podemos tanto jogar o código dentro do arquivo HTML ou usar ferramentas de build que disponibiliza o código inline sem precisar colocar tudo no mesmo arquivo.
-
-## Requisição Paralela
-
-Os navegadores disponibilizam um número de conexões paralelas de acordo com o domínio, podemos aumentar esse número utilizando outro domínio para algumas requisições da nossa página. Por exemplo, se você estiver baixando algumas imagens do domínio <i>seu.dominio</i> e tiver outras baixando do domínio <i>outras.dominio</i>, essas requisições não irão disputar entre si e você terá o dobro de conexões paralelas, diminuindo as requisições na fila. Lembrando que não é aconselhável ter muitos domínios para não saturar a rede.
+É importante nos atentar a quantidade de requisições necessária para carregarmos os primeiros conteúdos e o tamanho dos arquivos que estamos baixando. Podemos priorizar algumas requisições e usar ferramentas que nos ajuda a pegar várias informações com apenas uma requisição, como [GraphQL](https://graphql.org/).
 
 ## Cache
 
@@ -45,11 +35,32 @@ Vale lembrar que é preciso analisar quais arquivos fazem sentido estar em cache
 
 ##  Javascript assíncrono
 
-Deixar assíncrono scripts que não são essenciais para a primeira renderização da página, pode ajudar no tempo de carregamento, possibilitando mostrar algumas informações, melhorando a percepção de performance, antes que todos os scripts sejam baixado.
+Deixar assíncrono scripts que não são essenciais para a primeira renderização da página, pode melhorar o tempo que demora para a página ficar utilizável. Sendo assíncrono, ele deixa de ser bloqueante, o que significa que o navegador não vai esperar baixar e executar aquele script para poder seguir com as outras requisições. Lembrando que como ele é assíncrono, não tem uma ordem para ser executado, assim deve ser analisado quais podem receber esse atributo.
+
+Para fazer isso, basta colocar o atributo <i>async</i> na tag do script, assim:
+
+`<script async src="path"></script> `
+
+## Lazy load
+
+É uma técnica que permite adiar alguns carregamentos de recurso, para melhorar o tempo de carregamento da página e evitar executar recursos desnecessários. Podemos checar na documentação do [React](https://reactjs.org/docs/code-splitting.html) como fazemos para utilizar essa técnica para o carregamento dos componentes.
+
+## Debounce e throttle
+
+Essas técnicas são bem interessantes para utilizar com eventos do navegador ou alguma funcionalidade que dispara com muita frequência, seu intuito é diminuir processamento desnecessário.
+
+A ideia das técnicas é bem semelhante, sendo o debounce para executar funções após um tempo sem o evento ser disparado, e o throttle determina o intervalo de tempo que a função deve ser chamada, sem precisar que o evento pare de ocorrer. O artigo [Debounce vs. Throttle no Javascript](https://blog.rocketseat.com.br/debounce-vs-throttle-no-javascript/) explica de forma mais detalhada.
+
+
+## Preload CSS
+
+O CSS é um recurso bloqueante, ou seja, o navegador espera baixar e executar antes de prosseguir com a renderização. Para evitar que o navegador espere todo o CSS, podemos utilizar a técnica de preload, que baixa os recursos, mas não bloqueia a renderização. [Nesse link](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) tem uma explicação mais detalhada.
 
 ## Material de apoio
 
 [Curso Performance Web I: otimizando o front-end](https://www.alura.com.br/curso-online-otimizacao-performance-web)
+
+[Performance Web II: Critical Path, HTTP/2 e Resource Hints](https://cursos.alura.com.br/course/performance-http2-critical-path)
 
 [HTTP Archive](https://httparchive.org/)
 
@@ -62,3 +73,5 @@ Deixar assíncrono scripts que não são essenciais para a primeira renderizaç�
 [CSS Sprites: What They Are, Why They’re Cool, and How To Use Them](https://css-tricks.com/css-sprites/.)
 
 [Web Performance Otimization](https://wpostats.com/)
+
+[Push do servidor HTTP/2](https://imasters.com.br/devsecops/push-do-servidor-http2)
