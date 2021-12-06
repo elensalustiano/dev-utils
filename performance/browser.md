@@ -25,3 +25,8 @@ Com isso notamos que não podemos apenas nos preocupar com o tempo de carregamen
 [Understanding the critical rendering path, rendering pages in 1 second](https://medium.com/@luisvieira_gmr/understanding-the-critical-rendering-path-rendering-pages-in-1-second-735c6e45b47a)
 
 [Critical Rendering Path - Velocidade também é uma funcionalidade](https://www.infoq.com/br/presentations/critical-rendering-path/)
+
+[Desempenho da renderização](https://developers.google.com/web/fundamentals/performance/rendering)
+
+[CSS triggers](https://csstriggers.com/)
+

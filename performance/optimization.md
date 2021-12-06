@@ -64,6 +64,8 @@ O CSS é um recurso bloqueante, ou seja, o navegador espera baixar e executar an
 
 [HTTP Archive](https://httparchive.org/)
 
+[JPEG, GIF, PNG OR SVG - Which should You use?](https://dev.to/sarah_chima/jpeg-gif-png-or-svg---which-should-i-use-1o8o)
+
 [Smart WebP, PNG and JPEG compression](https://tinypng.com/)
 
 [SVG compression](https://jakearchibald.github.io/svgomg/)
@@ -75,3 +77,7 @@ O CSS é um recurso bloqueante, ou seja, o navegador espera baixar e executar an
 [Web Performance Otimization](https://wpostats.com/)
 
 [Push do servidor HTTP/2](https://imasters.com.br/devsecops/push-do-servidor-http2)
+
+[Performance Budget Calculator](https://www.performancebudget.io/)
+
+[Browser Calories](https://browserdiet.com/calories/)

@@ -35,3 +35,5 @@ Para isso, propriedades como o *transform* do CSS permite animar elementos sem a
 [First Input Delay (FID)](https://web.dev/fid/)
 
 [Cumulative Layout Shift (CLS)](https://web.dev/cls/)
+
+[web-vitals library](https://github.com/GoogleChrome/web-vitals)
