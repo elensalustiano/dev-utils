@@ -16,7 +16,7 @@ Com todas as informações principais carregadas, ele começa a desenhar o site,
 2. Layout: Nessa etapa o navegador calcula os tamanhos e posições dos elementos visíveis. Esse processo é disparado sempre que o Render Tree é atualizado ou algum tamanho de elemento muda; e
 3. Paint: Nessa etapa os elementos são desenhados.
 
-Com isso notamos que não podemos apenas nos preocupar com o tempo de carregamento do HTML, se ele depende do CSS e JS para continuar o processo. Além disso, vale lembrar que a ordem dos scripts no HTML define sua prioridade na hora de baixar, por isso é importante manter o CSS no topo e colocar os scripts no final do arquivo após o conteúdo (body), dessa forma o JS não será baixado após todo o resto do conteúdo.
+Com isso notamos que não podemos apenas nos preocupar com o tempo de carregamento do HTML, se ele depende do CSS e JS para continuar o processo. Além disso, vale lembrar que a ordem dos scripts no HTML define sua prioridade na hora de baixar, por isso é importante manter o CSS no topo e colocar os scripts no final do arquivo após o conteúdo (body), dessa forma o JS será baixado após todo o resto do conteúdo.
 
 ## Material de apoio
 

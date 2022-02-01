@@ -11,3 +11,5 @@ A ideia é ser um repositório de consulta sobre desenvolvimento. A motivação 
 ### Links interesantes
 
 [Curso de HTML5 e CSS3 do Gustavo Guanabara](https://github.com/gustavoguanabara/html-css)
+
+[Modern JavaScript for Dinosaurs](https://peterxjang.com/blog/modern-javascript-explained-for-dinosaurs.html)

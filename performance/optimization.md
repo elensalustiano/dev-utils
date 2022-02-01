@@ -43,7 +43,7 @@ Para fazer isso, basta colocar o atributo <i>async</i> na tag do script, assim:
 
 ## Lazy load
 
-É uma técnica que permite adiar alguns carregamentos de recurso, para melhorar o tempo de carregamento da página e evitar executar recursos desnecessários. Podemos checar na documentação do [React](https://reactjs.org/docs/code-splitting.html) como fazemos para utilizar essa técnica para o carregamento dos componentes.
+É uma técnica que permite adiar alguns carregamentos de recurso, para melhorar o tempo de carregamento da página e evitar executar recursos desnecessários. Podemos ler mais sobre o assunto [aqui](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) e checar na documentação do [React](https://reactjs.org/docs/code-splitting.html) como fazemos para utilizar essa técnica para o carregamento dos componentes.
 
 ## Debounce e throttle
 
@@ -81,3 +81,7 @@ O CSS é um recurso bloqueante, ou seja, o navegador espera baixar e executar an
 [Performance Budget Calculator](https://www.performancebudget.io/)
 
 [Browser Calories](https://browserdiet.com/calories/)
+
+[The complete guide to lazy loading images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/)
+
+[Virtualize grandes listas com janela de reação](https://web.dev/i18n/pt/virtualize-long-lists-react-window/)
