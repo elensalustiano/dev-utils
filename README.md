@@ -6,7 +6,7 @@ A ideia é ser um repositório de consulta sobre desenvolvimento. A motivação 
 
 - [Performance](performance/index.md)
 - [Acessibilidade](accessibility.md)
-
+- [Ferramentas](tools/index.md)
 
 ### Links interesantes
 
