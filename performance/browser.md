@@ -1,7 +1,27 @@
 # Navegadores
 
-Para podermos fazer algumas melhorias de performance no nosso site, precisamos entender algumas coisas que o navegador faz a partir do momento que requisitamos um site.
+Para podermos fazer algumas melhorias de performance no nosso site, precisamos entender alguns aspectos de funcionamento do navegador.
 
+## Estrutura de alto nível
+
+O navegador tem alguns componentes principais, são eles:
+ - User interface: É a parte visual do navegador, como a barra de favorito, barra de endereço, botões, etc.
+ - Browser engine: Responsável por manipular os dados enviados pela user interface e mandar para a rendering engine.
+ - Rendering Engine: Responsável por renderizar o conteúdo, fazendo as manipulações necessárias de acordo com a tecnologia utilizada.
+ - Networking: Cuida de todos os aspectos relacionados a internet, como protocolos, seguranças, etc.
+ - UI backend: Utiliza de operações do sistema para mostrar widgets.
+ - JavaScript interpreter: Analisa e executa códigos JavaScript.
+ - Data Persistence: Utilizada para salvar dados localmente. E nessa camada que encontramos localStorage, IndexedDB, FileSystem, Cache, etc;
+
+Segue ilustração dessa estrutura:
+
+![Estrutura do navegador](/images/browser-structure.png)
+
+### Rendering engines
+
+Responsável por renderizar conteúdos que são, normalmente, HTML, XML e imagens. Nem todos os navegadores usam a mesma engine, temos: Internet Explorer com a Trident, Firefox com a Gecko, Safari com a WebKit, Chrome and Opera com a Blink.
+
+// TODO
 ## caminho de renderização crítico
 
 Alguns recursos são críticos para que o navegador comece a desenhar um site, o primeiro é o HTML principal, onde colocamos os recursos iniciais que precisam ser baixados para a renderização. Normalmente encontramos nesse arquivo alguns scripts e CSS que determinam como nosso página será desenhada, por esse motivo esses recursos são considerados bloqueantes. A imagem abaixo exemplifica esse fluxo:
@@ -30,3 +50,6 @@ Com isso notamos que não podemos apenas nos preocupar com o tempo de carregamen
 
 [CSS triggers](https://csstriggers.com/)
 
+[How Browsers Work: Behind the scenes of modern web browsers](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+
+[How does web browsers work?](https://medium.com/@monica1109/how-does-web-browsers-work-c95ad628a509)
