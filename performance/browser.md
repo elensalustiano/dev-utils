@@ -21,18 +21,19 @@ Segue ilustração dessa estrutura:
 
 Responsável por renderizar conteúdos que são, normalmente, HTML, XML e imagens. Nem todos os navegadores usam a mesma engine, temos: Internet Explorer com a Trident, Firefox com a Gecko, Safari com a WebKit, Chrome and Opera com a Blink.
 
-// TODO
 ## caminho de renderização crítico
 
-Alguns recursos são críticos para que o navegador comece a desenhar um site, o primeiro é o HTML principal, onde colocamos os recursos iniciais que precisam ser baixados para a renderização. Normalmente encontramos nesse arquivo alguns scripts e CSS que determinam como nosso página será desenhada, por esse motivo esses recursos são considerados bloqueantes. A imagem abaixo exemplifica esse fluxo:
+Alguns recursos são críticos para que o navegador comece a desenhar um site, o primeiro é o HTML principal, onde colocamos os recursos iniciais que precisam ser baixados para a renderização. Normalmente encontramos nesse arquivo alguns scripts e CSS que determinam como nosso página será desenhada, por esse motivo esses recursos são considerados bloqueantes. As imagens abaixo exemplificam esse fluxo:
 
 ![Web vitals metrics](/images/critical-rendering-path.jpg)
+
+![Render tree](/images/render-tree.jpg)
 
 Analisando a imagem, primeiro o navegador obtém o HTML e constrói o DOM (Document Object Model). Após isso, ele procura por JavaScript e CSS que são recursos que influenciam diretamente no layout e começa a baixar. O arquivos de CSS também precisam ser interpretados, chamamos de CSSOM (CSS Object Model), semelhante ao processo de construção do DOM, onde as regras dos elementos são definidas.
 
 Com todas as informações principais carregadas, ele começa a desenhar o site, temos essas 3 principais etapas:
 
-1. Render Tree: Nessa etapa temos a combinação do DOM e CSSOM, onde obtemos os conteúdos e seus estilos;
+1. Render Tree: Nessa etapa temos a combinação do DOM e CSSOM, onde obtemos os conteúdos e seus estilos. Essa árvore contém apenas elementos visíveis;
 2. Layout: Nessa etapa o navegador calcula os tamanhos e posições dos elementos visíveis. Esse processo é disparado sempre que o Render Tree é atualizado ou algum tamanho de elemento muda; e
 3. Paint: Nessa etapa os elementos são desenhados.
 
