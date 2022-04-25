@@ -2,6 +2,7 @@ As ferramentas nos ajudam a resolver problemas, para que as pessoas desenvolvedo
 
 Segue mais informações sobre esse tópico:
 
- - [Gerenciador de pacotes (package manager)](package-manager.md)
- - [ Executor de tarefas (task runner)](task-runner.md)
- - [ Transpile](transpile.md)
+- [Gerenciador de pacotes (package manager)](package-manager.md)
+- [ Executor de tarefas (task runner)](task-runner.md)
+- [ Transpile](transpile.md)
+- [ Module Bundlers](module-bundlers.md)

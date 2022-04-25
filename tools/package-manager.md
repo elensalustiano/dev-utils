@@ -18,3 +18,5 @@ No JavaScript, basicamente é necessário apenas um arquivo para fazer todo esse
 [NPM - package manager](https://docs.npmjs.com/)
 
 [Yarn - package manager](https://classic.yarnpkg.com/en/docs/getting-started)
+
+[Ride Down Into JavaScript Dependency Hell](https://blog.appsignal.com/2020/04/09/ride-down-the-javascript-dependency-hell.html)
